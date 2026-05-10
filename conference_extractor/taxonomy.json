@@ -1,0 +1,51 @@
+{
+  "scope_rule_version": "2026-02-01",
+  "industry_rules": [
+    {"contains": "tradeshow", "code": "TRADESHOW", "label": "Tradeshow / B2B exhibition"},
+    {"contains": "conference", "code": "CONFERENCE", "label": "Conference"},
+    {"contains": "summit", "code": "SUMMIT", "label": "Summit"},
+    {"contains": "expo", "code": "EXPO", "label": "Expo / exhibition"},
+    {"contains": "food & beverage", "code": "FOOD_BEV", "label": "Food & Beverages"},
+    {"contains": "food and beverage", "code": "FOOD_BEV", "label": "Food & Beverages"},
+    {"contains": "health", "code": "HEALTH", "label": "Health & medical"},
+    {"contains": "beauty", "code": "BEAUTY", "label": "Beauty & cosmetics"},
+    {"contains": "technology", "code": "TECH", "label": "Technology"},
+    {"contains": "electric", "code": "ELECTRONICS", "label": "Electronics & electrical"}
+  ],
+  "b2b_positive_substrings": [
+    "tradeshow",
+    "trade show",
+    "b2b",
+    "exhibitor",
+    "exhibition",
+    "buyers",
+    "suppliers",
+    "business",
+    "industry",
+    "professionals",
+    "procurement"
+  ],
+    "networking_substrings": [
+    "network",
+    "pre-network",
+    "matchmaking",
+    "meet",
+    "connect",
+    "community",
+    "roundtable",
+    "1:1",
+    "b2b meeting"
+  ],
+  "consumer_festival_penalty": [
+    "music festival",
+    " edm ",
+    "concert series",
+    "fan fest"
+  ],
+  "in_scope_logic": {
+    "require_b2b": true,
+    "require_networking": false,
+    "require_any_engagement": true,
+    "engagement_fields": ["has_exhibitors", "has_sponsors", "has_speakers"]
+  }
+}

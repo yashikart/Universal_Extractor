@@ -1,0 +1,92 @@
+[
+  {
+    "conference_domain": "10times.com",
+    "conference_group_name": "Food-Beverage",
+    "conference_group_description": null,
+    "industry_methodology": {
+      "code": "TRADESHOW",
+      "label": "Tradeshow / B2B exhibition"
+    },
+    "event_name": "Bakery China",
+    "start_date": "2026-05-20",
+    "end_date": "2026-05-23",
+    "event_url": "https://10times.com/bakery-china",
+    "exhibitor_crawler_url": "https://10times.com/bakery-china/exhibitors",
+    "sponsor_crawler_url": "https://10times.com/bakery-china/sponsors",
+    "venue_name": "National Convention & Exhibition Center",
+    "address_line_1": null,
+    "address_line_2": null,
+    "city": "Shanghai",
+    "country": "China",
+    "state_or_province": null,
+    "postal_code": null,
+    "event_description_methodology": "5282 people interested. Rated 4.4 by 119 people. Check out who is attending ✭ exhibiting ✭ speaking ✭ schedule & agenda ✭ reviews ✭ timing ✭ entry ticket fees. 2026 edition of Bakery China will be held at National Convention & Exhibition Center, Shanghai starting on 20th May. It is a 4 day event organised by Bakery China Exhibitions Co., Ltd. and will conclude on 23-May-2026.",
+    "hosting_entity": "Bakery China Exhibitions Co., Ltd.",
+    "hosting_entity_url": "https://10times.com/company/bakery-china-exhibitions-co2c-ltd",
+    "conference_group": "Food-Beverage",
+    "industry": "Tradeshow / B2B exhibition",
+    "industry_raw": "Tradeshow Natural & Organic Tea & Coffee Bakery & Confectionery Food & Beverages",
+    "attending_companies": [],
+    "attending_crawler_url": "https://10times.com/bakery-china/visitors",
+    "exhibitor_companies": [
+      "Johnson Smart Technology (Jiaxin...",
+      "Shanghai Vixdetect Inspection Eq...",
+      "Bakery China Exhibitions Co., Lt...",
+      "YIHAI KERRY FOOD TECHNOLOGY CO.,...",
+      "DLA NATURALS INC",
+      "ZHENGZHOUNINGYUPACKAGING CO., LT...",
+      "Bruker (Beijing) Scientific Tech...",
+      "SUZHOU HUAPENG MYTHICAL BIRD CAN...",
+      "Shanghai Dookoo Electronic Techn...",
+      "Shanghai fly lucky food co.,ltd",
+      "XIAMEN DELIN TRADING CO., LTD"
+    ],
+    "exhibitor_company_websites": [],
+    "sponsor_companies": [],
+    "sponsor_company_websites": [],
+    "speakers": [],
+    "scope": {
+      "b2b": true,
+      "networking_opportunities": false,
+      "has_exhibitors": true,
+      "has_sponsors": true,
+      "has_speakers": false,
+      "in_scope": true,
+      "scope_rule_version": "2026-02-01"
+    },
+    "listing_metadata": {
+      "event_url": "https://10times.com/bakery-china",
+      "sources": [
+        "listing",
+        "featured",
+        "jsonld"
+      ],
+      "event_id": "3818",
+      "edition_id": "4124425",
+      "name": "Bakery China",
+      "date_display": "Wed, 20 - Sat, 23 May 2026",
+      "venue": "Shanghai , China",
+      "description": "Bakery China is a leading global trade show for the baking industry, backed by industry associations, promoting idea exchange and sector growth. The upcoming Bakery China 2026 edition will be held in Shanghai...",
+      "categories": "Tradeshow Natural & Organic Tea & Coffee Bakery & Confectionery Food & Beverages",
+      "footer_stats": "Interested 5597 4.4",
+      "start_date": "2026-05-20",
+      "end_date": "2026-05-23",
+      "jsonld_position": 1,
+      "jsonld_image": [
+        "https://c1.10times.com/images/event/3818/eventlogo-62-1697777165.jpg"
+      ],
+      "geo_latitude": "31.190706",
+      "geo_longitude": "121.306102",
+      "venue_page_url": "https://10times.com/venues/national-convention-and-exhibition-center",
+      "exhibitor_count_estimate": 394,
+      "hub_redirect_url": "https://10times.com/hub/food-beverage-hub",
+      "seed_name": "Bakery China",
+      "seed_venue_line": "Shanghai , China",
+      "seed_footer_stats": "Interested 5597 4.4",
+      "exhibitor_page_total_hint": 394
+    },
+    "detail_parse_notes": [
+      "speakers_tab_disabled"
+    ]
+  }
+]
