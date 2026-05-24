@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/international-conference-on-educational-and-information-technology-iceit-2027-march-chongqing-cn",
+    "main": "https://www.iceit.org",
+    "speakers": "https://www.iceit.org/keynote.html"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

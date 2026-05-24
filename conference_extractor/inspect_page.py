@@ -15,11 +15,11 @@ Outputs:
   - elements.json      all elements (tag, id, class, attrs, text preview, parent index)
   - elements.csv       same data tabular (optional with --csv)
 
-For list pages with common directory markup (+ JSON-LD), extract events without an LLM:
+For list pages, extract events without an LLM:
   python listing_html_extract.py <out_dir>/page.html --out events.json
 
-Full enrichment (event detail + optional exhibitor/sponsor pages + scope flags):
-  python enrich_events.py events.json -o events_enriched.json --satellite --limit 10
+Or use the Streamlit UI:
+  streamlit run inspect_app.py
 """
 
 from __future__ import annotations
@@ -39,6 +39,10 @@ from harvest_all_html import (
     _is_cf_hard_ip_block,
     _is_cloudflare_block,
 )
+
+class InspectCaptureError(RuntimeError):
+    """Page capture failed (e.g. Cloudflare block); partial files may exist in out_dir."""
+
 
 EVAL_ELEMENTS = """
 () => {
@@ -81,7 +85,7 @@ async def _inspect(
     cf_max_wait_s: float,
     write_csv: bool,
     screenshot: bool,
-) -> None:
+) -> dict[str, Any]:
     from playwright.async_api import async_playwright
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -92,8 +96,8 @@ async def _inspect(
     }
     if chrome_channel:
         launch_kwargs["channel"] = "chrome"
-    if proxy and proxy.strip():
-        launch_kwargs["proxy"] = {"server": proxy.strip()}
+    if (proxy or "").strip():
+        launch_kwargs["proxy"] = {"server": (proxy or "").strip()}
 
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(**launch_kwargs)
@@ -122,7 +126,7 @@ async def _inspect(
                 html = await page.content()
                 if _is_cf_hard_ip_block(html):
                     (out_dir / "page.html").write_text(html, encoding="utf-8", errors="replace")
-                    raise SystemExit(
+                    raise InspectCaptureError(
                         "Cloudflare hard block (IP). Try another network, VPN, or --proxy. "
                         "Saved partial page.html for inspection."
                     )
@@ -133,7 +137,7 @@ async def _inspect(
             html = await page.content()
             if _is_cloudflare_block(html):
                 (out_dir / "page.html").write_text(html, encoding="utf-8", errors="replace")
-                raise SystemExit(
+                raise InspectCaptureError(
                     "Still on Cloudflare challenge. Try --headed --chrome --proxy, "
                     "or increase timeouts. Saved page.html."
                 )
@@ -167,7 +171,7 @@ async def _inspect(
                         r = {**row, "attrs_json": json.dumps(row.get("attrs") or {}, ensure_ascii=False)}
                         w.writerow(r)
 
-            print(json.dumps(meta, indent=2), flush=True)
+            return meta
         finally:
             await page.close()
             await context.close()
@@ -197,7 +201,7 @@ def main() -> None:
     out = Path(args.out)
 
     try:
-        asyncio.run(
+        meta = asyncio.run(
             _inspect(
                 url,
                 out,
@@ -211,6 +215,10 @@ def main() -> None:
                 screenshot=args.screenshot,
             )
         )
+        print(json.dumps(meta, indent=2), flush=True)
+    except InspectCaptureError as e:
+        print(str(e), file=sys.stderr)
+        raise SystemExit(1) from e
     except KeyboardInterrupt:
         print("Interrupted.", file=sys.stderr)
         raise SystemExit(130) from None

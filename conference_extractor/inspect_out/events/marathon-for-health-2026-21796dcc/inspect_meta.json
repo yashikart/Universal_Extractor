@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "sponsors": "sponsors.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/ghaziabad/marathon-for-health-2026-tickets/80006160074830",
+    "main": "https://marathonmitra.com/events/marathon-for-health-2026-run-for-a-better-you",
+    "sponsors": "https://marathonmitra.com/organizers-partners"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

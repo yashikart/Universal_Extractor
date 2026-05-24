@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "program": "program.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/global-medical-intelligence-conference-medintel-2026-august-sydney-au",
+    "program": "https://conferenceindex.org/event/global-medical-intelligence-conference-medintel-2026-august-sydney-au/program",
+    "main": "https://globalconference.ca/conference/41st-global-conference-on-machine-learning-and-artificial-intelligence"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

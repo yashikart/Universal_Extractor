@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/gurugram/startup-and-investor-summit-2026-founders-connect-tickets/80003330255639",
+    "main": "https://experiences.highwaydelite.com/s5/master-union/speciality-events/startup-investor-summit-2026-founders-connect"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

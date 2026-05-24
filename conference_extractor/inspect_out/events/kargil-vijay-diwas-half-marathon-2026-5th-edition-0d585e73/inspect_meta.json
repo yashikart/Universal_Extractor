@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/new-delhi/kargil-vijay-diwas-half-marathon-2026-5th-edition-tickets/80002565703113",
+    "main": "https://zenmountain.in/event/kargil-vijay-diwas-half-marathon-2026-5th-edition",
+    "speakers": "https://zenmountain.in/training-programs/"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

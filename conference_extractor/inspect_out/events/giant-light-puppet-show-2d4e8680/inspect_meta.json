@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "main": "main.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "main": "https://scarlettentertainment.com/acts/giants-of-light-puppets",
+    "speakers": "https://scarlettentertainment.com/categories/speakers-and-hosts/conference-presenters"
+  },
+  "notes": [
+    "listing_fetch_failed: net::ERR_TOO_MANY_REDIRECTS at https://allevents.in/hyderabad/giant-light-puppet-show-tickets/80002547456575",
+    "official_fetch: httpx"
+  ]
+}

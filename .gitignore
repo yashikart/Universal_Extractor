@@ -19,6 +19,7 @@ Thumbs.db
 # Env / secrets
 .env
 .env.*
+!.env.example
 
 # Generated / large caches (optional — remove line if you want these in repo)
 # *.json

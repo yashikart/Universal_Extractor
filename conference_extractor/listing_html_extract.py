@@ -13,8 +13,8 @@ Usage (from the ``conference_extractor`` directory, after ``inspect_page.py`` ha
   python listing_html_extract.py inspect_out/page.html --out events.json
   python listing_html_extract.py inspect_out/page.html --jsonl events.jsonl
 
-Next step: merge detail + exhibitor/sponsor/speaker and scope with
-``python enrich_events.py events.json --out events_enriched.json --satellite --speakers``.
+Next step (optional): open the Streamlit UI or run
+``python listing_html_extract.py inspect_out/page.html --out events.json``.
 """
 
 from __future__ import annotations
@@ -34,6 +34,44 @@ WINDOW_OPEN_RE = re.compile(
     r"""window\.open\s*\(\s*(['"])(https?://[^'"]+)\1""",
     re.IGNORECASE,
 )
+
+# Path segments that usually mean an event *detail* page (not category/search/nav).
+_EVENT_DETAIL_PATH_RE = re.compile(
+    r"""(?i)(?:^|/)event/[^/?#]+|(?:^|/)events/(?!create|list|index)[^/?#]+|(?:^|/)conference/[^/?#]+""",
+)
+
+# Paths to skip when harvesting <a href> (listing hubs, auth, static pages).
+_NON_EVENT_PATH_PREFIXES = (
+    "/conferences/",
+    "/disciplines",
+    "/locations",
+    "/search",
+    "/auth/",
+    "/user/",
+    "/page/",
+    "/static/",
+    "/favicon",
+)
+
+
+def _looks_like_event_detail_url(url: str) -> bool:
+    u = (url or "").strip()
+    if not u or u.startswith(("javascript:", "mailto:", "#")):
+        return False
+    parsed = urlparse(u)
+    if parsed.scheme not in ("http", "https"):
+        return False
+    path = parsed.path or ""
+    lower = path.lower()
+    for prefix in _NON_EVENT_PATH_PREFIXES:
+        if lower.startswith(prefix) or prefix.rstrip("/") == lower.rstrip("/"):
+            return False
+    if not _EVENT_DETAIL_PATH_RE.search(path):
+        return False
+    # Category hubs: /conferences/education (plural, no /event/)
+    if "/conferences/" in lower and "/event/" not in lower and "/events/" not in lower:
+        return False
+    return True
 
 
 def _canonical_url(url: str) -> str:
@@ -179,9 +217,72 @@ def _event_url_from_jsonld_item(item: dict[str, Any]) -> str | None:
     return None
 
 
+def _jsonld_type_matches(node: dict[str, Any], expected: str) -> bool:
+    t = node.get("@type")
+    if isinstance(t, str):
+        return t == expected or expected in t.split()
+    if isinstance(t, list):
+        return expected in t
+    return False
+
+
+def _iter_jsonld_nodes(data: Any) -> list[dict[str, Any]]:
+    """Flatten JSON-LD blocks: top-level object, @graph, or list of objects."""
+    if isinstance(data, list):
+        nodes: list[dict[str, Any]] = []
+        for item in data:
+            nodes.extend(_iter_jsonld_nodes(item))
+        return nodes
+    if not isinstance(data, dict):
+        return []
+    graph = data.get("@graph")
+    if isinstance(graph, list):
+        nodes = []
+        for item in graph:
+            nodes.extend(_iter_jsonld_nodes(item))
+        return nodes
+    return [data]
+
+
+def _record_from_jsonld_event(
+    item: dict[str, Any], *, position: Any = None
+) -> dict[str, Any] | None:
+    if not _jsonld_type_matches(item, "Event"):
+        return None
+    event_url = _event_url_from_jsonld_item(item)
+    if not event_url:
+        return None
+    loc = item.get("location")
+    venue_name = None
+    if isinstance(loc, list):
+        for block in loc:
+            if isinstance(block, dict) and _jsonld_type_matches(block, "Place"):
+                venue_name = block.get("name")
+                break
+    elif isinstance(loc, dict) and _jsonld_type_matches(loc, "Place"):
+        venue_name = loc.get("name")
+    return {
+        "event_url": event_url,
+        "source": "jsonld",
+        "event_id": None,
+        "edition_id": None,
+        "name": item.get("name"),
+        "date_display": None,
+        "start_date": item.get("startDate"),
+        "end_date": item.get("endDate"),
+        "venue": venue_name,
+        "description": None,
+        "categories": None,
+        "footer_stats": None,
+        "jsonld_position": position,
+        "jsonld_image": item.get("image"),
+    }
+
+
 def parse_jsonld_events(soup: BeautifulSoup) -> list[dict[str, Any]]:
-    """Any page with ``ItemList`` / ``Event`` JSON-LD."""
+    """JSON-LD: ``ItemList`` of ``Event``, standalone ``Event``, or ``@graph``."""
     out: list[dict[str, Any]] = []
+    seen: set[str] = set()
     for script in soup.find_all("script", type="application/ld+json"):
         raw = script.string or script.get_text() or ""
         raw = raw.strip()
@@ -191,47 +292,119 @@ def parse_jsonld_events(soup: BeautifulSoup) -> list[dict[str, Any]]:
             data = json.loads(raw)
         except json.JSONDecodeError:
             continue
-        if data.get("@type") != "ItemList":
+        for node in _iter_jsonld_nodes(data):
+            if _jsonld_type_matches(node, "Event"):
+                rec = _record_from_jsonld_event(node)
+                if rec:
+                    key = _canonical_url(rec["event_url"])
+                    if key and key not in seen:
+                        seen.add(key)
+                        out.append(rec)
+                continue
+            if not _jsonld_type_matches(node, "ItemList"):
+                continue
+            elements = node.get("itemListElement") or []
+            for entry in elements:
+                if not isinstance(entry, dict):
+                    continue
+                item = entry.get("item")
+                if isinstance(item, str) and item.startswith("http"):
+                    if _looks_like_event_detail_url(item):
+                        key = _canonical_url(item)
+                        if key and key not in seen:
+                            seen.add(key)
+                            out.append(
+                                {
+                                    "event_url": item,
+                                    "source": "jsonld",
+                                    "event_id": None,
+                                    "edition_id": None,
+                                    "name": entry.get("name"),
+                                    "date_display": None,
+                                    "start_date": None,
+                                    "end_date": None,
+                                    "venue": None,
+                                    "description": None,
+                                    "categories": None,
+                                    "footer_stats": None,
+                                    "jsonld_position": entry.get("position"),
+                                    "jsonld_image": None,
+                                }
+                            )
+                    continue
+                if not isinstance(item, dict):
+                    continue
+                rec = _record_from_jsonld_event(item, position=entry.get("position"))
+                if rec:
+                    key = _canonical_url(rec["event_url"])
+                    if key and key not in seen:
+                        seen.add(key)
+                        out.append(rec)
+    return out
+
+
+def parse_window_open_urls(html: str) -> list[dict[str, Any]]:
+    """Every ``window.open('https://…')`` in the raw HTML (any host)."""
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for m in WINDOW_OPEN_RE.finditer(html):
+        url = m.group(2)
+        key = _canonical_url(url)
+        if not key or key in seen:
             continue
-        elements = data.get("itemListElement") or []
-        for entry in elements:
-            if not isinstance(entry, dict):
-                continue
-            item = entry.get("item")
-            if not isinstance(item, dict):
-                continue
-            if item.get("@type") != "Event":
-                continue
-            event_url = _event_url_from_jsonld_item(item)
-            if not event_url:
-                continue
-            loc = item.get("location")
-            venue_name = None
-            if isinstance(loc, list):
-                for block in loc:
-                    if isinstance(block, dict) and block.get("@type") == "Place":
-                        venue_name = block.get("name")
-                        break
-            elif isinstance(loc, dict) and loc.get("@type") == "Place":
-                venue_name = loc.get("name")
-            out.append(
-                {
-                    "event_url": event_url,
-                    "source": "jsonld",
-                    "event_id": None,
-                    "edition_id": None,
-                    "name": item.get("name"),
-                    "date_display": None,
-                    "start_date": item.get("startDate"),
-                    "end_date": item.get("endDate"),
-                    "venue": venue_name,
-                    "description": None,
-                    "categories": None,
-                    "footer_stats": None,
-                    "jsonld_position": entry.get("position"),
-                    "jsonld_image": item.get("image"),
-                }
-            )
+        seen.add(key)
+        out.append(
+            {
+                "event_url": url,
+                "source": "window_open",
+                "event_id": None,
+                "edition_id": None,
+                "name": None,
+                "date_display": None,
+                "start_date": None,
+                "end_date": None,
+                "venue": None,
+                "description": None,
+                "categories": None,
+                "footer_stats": None,
+            }
+        )
+    return out
+
+
+def parse_anchor_event_links(soup: BeautifulSoup) -> list[dict[str, Any]]:
+    """``<a href>`` whose path looks like an event detail page (card/list sites)."""
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for a in soup.find_all("a", href=True):
+        if not isinstance(a, Tag):
+            continue
+        href = (a.get("href") or "").strip()
+        if not href:
+            continue
+        if not _looks_like_event_detail_url(href):
+            continue
+        key = _canonical_url(href)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        name = a.get("title") or a.get_text(" ", strip=True) or None
+        out.append(
+            {
+                "event_url": href,
+                "source": "anchor",
+                "event_id": None,
+                "edition_id": None,
+                "name": name or None,
+                "date_display": None,
+                "start_date": None,
+                "end_date": None,
+                "venue": None,
+                "description": None,
+                "categories": None,
+                "footer_stats": None,
+            }
+        )
     return out
 
 
@@ -239,6 +412,8 @@ def merge_events(
     listing: list[dict[str, Any]],
     featured: list[dict[str, Any]],
     jsonld: list[dict[str, Any]],
+    window_open: list[dict[str, Any]] | None = None,
+    anchors: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     merged: dict[str, dict[str, Any]] = {}
 
@@ -269,17 +444,23 @@ def merge_events(
         put(rec)
     for rec in jsonld:
         put(rec)
+    for rec in window_open or []:
+        put(rec)
+    for rec in anchors or []:
+        put(rec)
 
     return list(merged.values())
 
 
 def parse_event_listing_html(html: str) -> list[dict[str, Any]]:
-    """Parse listing + featured (directory-style DOM) + JSON-LD events; merge by URL."""
+    """Directory DOM + JSON-LD + global window.open + event-detail anchor links."""
     soup = BeautifulSoup(html, "html.parser")
     listing = parse_listing_table(soup)
     featured = parse_featured(soup)
     jsonld = parse_jsonld_events(soup)
-    return merge_events(listing, featured, jsonld)
+    window_open = parse_window_open_urls(html)
+    anchors = parse_anchor_event_links(soup)
+    return merge_events(listing, featured, jsonld, window_open, anchors)
 
 
 def get_listing_ajax_url(html: str) -> str | None:
@@ -294,8 +475,8 @@ def get_listing_ajax_url(html: str) -> str | None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(
-        description="Extract event rows from saved HTML (generic window.open URLs + JSON-LD; "
-        "directory-style #listing-events / #featured-events when present)."
+        description="Extract event rows from saved HTML: directory tables, JSON-LD, "
+        "global window.open URLs, and <a href> event-detail links."
     )
     ap.add_argument("html_path", type=Path, help="Path to page.html (or similar dump)")
     ap.add_argument("--out", type=Path, help="Write JSON array to this file")

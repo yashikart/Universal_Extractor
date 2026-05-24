@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/bhandardara/deepsky-stargazing-at-bhandardara-tickets/80001426896189",
+    "main": "https://stargazingmumbai.in/stargazing-at-bhandardara"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

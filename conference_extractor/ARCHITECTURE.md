@@ -1,104 +1,127 @@
-# Conference extractor — architecture and how it works
+# Architecture
 
-This folder is a **small pipeline**: capture or reuse HTML → extract a flat list of events → fetch each event’s pages in a browser → parse HTML into a **canonical record** → compute **scope** from rules in `taxonomy.json`.
+## Overview
 
----
+The conference extractor is a three-phase pipeline: capture a listing page, extract event URLs, then enrich each event from its official website into a scoped CSV row.
 
-## End-to-end flow
-
-```mermaid
-flowchart LR
-  subgraph capture [Capture optional]
-    A[inspect_page.py] --> B[inspect_out/page.html]
-  end
-  subgraph listing [Listing extract]
-    B --> C[listing_html_extract.py]
-    C --> D[events.json]
-  end
-  subgraph enrich [Enrich]
-    D --> E[enrich_events.py]
-    E --> F[playwright_fetch.py]
-    F --> G[parse_event_html.py]
-    G --> H[scope_eval.py]
-    H --> I[events_enriched.json]
-  end
+```
+┌──────────────────┐     ┌──────────────────────┐     ┌──────────────────────┐
+│  ① CAPTURE       │     │  ② EXTRACT           │     │  ③ ENRICH            │
+│  (optional)      │     │                      │     │                      │
+│  inspect_page.py │──►  │  listing_html_       │──►  │  enrich_events.py    │
+│  inspect_app.py  │     │  extract.py          │     │  + web_search        │
+│       │          │     │       │              │     │  + playwright_fetch  │
+│       ▼          │     │       ▼              │     │  + parse_event_site  │
+│   page.html      │     │  events.json         │     │  events_enriched.csv │
+└──────────────────┘     └──────────────────────┘     └──────────────────────┘
 ```
 
-1. **`inspect_page.py`** (optional) — Opens a URL with Playwright, waits through common bot interstitials (see `harvest_all_html.py`), saves `page.html` and optional DOM dumps for debugging selectors.
+---
 
-2. **`listing_html_extract.py`** — Reads **saved listing HTML** only (no browser). Pulls event rows by:
-   - `window.open('https://…')` URLs (any host),
-   - **Schema.org JSON-LD** (`ItemList` / `Event`),
-   - **directory-style** tables/rails (`#listing-events`, `#featured-events`) when present.
+## Phase 1 — Capture
 
-   Output: **`events.json`** — array of lightweight objects (must include `event_url` for the next step; other fields vary by source).
+**Modules:** `inspect_page.py`, `inspect_app.py` (Streamlit UI)  
+**Input:** a conference listing URL  
+**Output:** `inspect_out/page.html` (+ optional `elements.json`, screenshot)
 
-3. **`enrich_events.py`** — For each seed row:
-   - Fetches **`event_url`** (event detail/about page).
-   - Parses with **`parse_event_html.parse_event_detail`** → fills venue, dates, org, crawler URLs (`/exhibitors`, `/sponsors`, `/visitors`), etc.
-   - Optionally (`--satellite`) fetches exhibitor + sponsor list pages and merges lists.
-   - Optionally (`--speakers`) fetches the speakers tab URL when present.
-   - Maps **industry** from text using **`taxonomy.json`** (`map_industry`).
-   - Runs **`evaluate_scope`** → fills **`scope`** (B2B, networking, engagement flags, `in_scope`, rule version).
-   - Writes **`events_enriched.json`** — array of full **`empty_record()`**-shaped objects.
+Opens the listing URL in Chromium via Playwright. Waits through JavaScript rendering and common bot interstitials using stealth hooks in `harvest_all_html.py`.
 
 ---
 
-## Main modules
+## Phase 2 — Extract
+
+**Module:** `listing_html_extract.py`  
+**Input:** saved listing HTML  
+**Output:** `events.json`
+
+Detects event URLs via directory tables, JSON-LD, global `window.open`, and event-detail anchor heuristics.
+
+---
+
+## Phase 3 — Enrich
+
+**Modules:** `enrich_events.py`, `web_search.py`, `playwright_fetch.py`, `parse_event_site.py`, `scope_eval.py`, `csv_export.py`  
+**Input:** `events.json`  
+**Output:** `events_enriched.csv` (one row per event; JSON columns for speakers/sponsors)
+
+For each listing event the pipeline runs **inspect → extract → find all data.txt fields**:
+
+1. **Inspect** — fetch listing (+ program on Conference Index), optional official site + exhibitor/sponsor/speaker subpages; save HTML under `inspect_out/events/<slug>/` with `inspect_meta.json` and `coverage.json`.
+2. **Resolve official URL** — web search for non-aggregator listings (`TAVILY_API_KEY` if set, else DuckDuckGo). **Skipped** for Conference Index / aggregator hosts (listing + program only).
+3. **Extract** — JSON-LD `Event`, meta tags, heuristics, optional LLM when a real official site exists. Every filled field gets **provenance** (`field_provenance`: source + evidence snippet). LLM output is **validated** against page HTML before merge; ungrounded entities are stripped.
+4. **Validate** — `evidence_validator.py` checks snippets in HTML; `clear_unpublished_lists` when program is “coming soon”.
+5. **Scope** — `taxonomy.json` + `scope_eval.py` (`in_scope` = B2B and (networking or engagement)); stores `scope_evidence`.
+6. **Export** — `events_enriched.csv` + `events_coverage.csv` + **`events_review.csv`** (low-confidence / partial events).
+
+**Streamlit flow** (`inspect_app.py` → **Enrich to CSV** tab):
+
+1. Preview extracted event list (or upload `events.json`).
+2. Confirm the list looks correct.
+3. Choose **all events** or **limit to first N**.
+4. Run per-event inspect → extract; download CSV, coverage report, and **review CSV**.
+
+**Anti-hallucination:** Conference Index pages skip entity extraction and LLM. Official-site LLM runs at temperature 0 with required `evidence_snippet`; only empty scalars / append-only lists are merged after validation.
+
+---
+
+## Module reference
 
 | Module | Role |
-|--------|------|
-| `conference_record.py` | **`empty_record()`** schema (all datapoint keys + `scope` + `listing_metadata` + `detail_parse_notes`), **`merge_nonempty`**, **`domain_from_url`**. |
-| `parse_event_html.py` | **BeautifulSoup** parsers: detail page, exhibitors list, sponsors list, speakers list. Host-agnostic helpers (e.g. same-site vs external links for exhibitor websites). |
-| `scope_eval.py` | **`load_taxonomy`**, **`map_industry`**, **`methodology_description`** (truncate/normalize), **`evaluate_scope`** driven by `taxonomy.json`. |
-| `playwright_fetch.py` | Async **`fetch_page_html`**: Chromium launch, optional stealth (`harvest_all_html`), bounded wait when Cloudflare-style HTML is detected. |
-| `harvest_all_html.py` | Shared UA, stealth hook, string heuristics for challenge/hard-block pages. |
-| `taxonomy.json` | Industry substring rules, B2B / networking / penalty phrases, **`in_scope_logic`** (e.g. require B2B + at least one engagement signal). |
+|---|---|
+| `listing_html_extract.py` | Listing HTML parser |
+| `harvest_all_html.py` | UA, stealth, Cloudflare heuristics |
+| `inspect_page.py` | CLI capture |
+| `inspect_app.py` | Streamlit UI (capture + enrich) |
+| `web_search.py` | Official-site URL resolution |
+| `playwright_fetch.py` | Fetch event pages |
+| `parse_event_site.py` | Field extraction from official HTML |
+| `conference_record.py` | Record schema (data.txt fields) |
+| `taxonomy.json` | Industry + scope rules |
+| `scope_eval.py` | B2B / in_scope evaluation |
+| `csv_export.py` | CSV writer with JSON columns |
+| `enrich_events.py` | Orchestrator + CLI (inspect dir, coverage CSV) |
+| `event_inspect.py` | Per-event HTML bundle + `coverage.json` |
+| `data_txt_fields.py` | All 25 data.txt fields + coverage helpers |
+| `extract_heuristics.py` | JSON-LD, meta, entities, subpage discovery |
+| `extract_listing.py` | Conference Index listing/program parser |
+| `provenance.py` | Field-level source tracking and merge priority |
+| `evidence_validator.py` | Snippet-in-HTML checks; LLM/heuristic entity filtering |
+| `review_export.py` | Review queue CSV (`events_review.csv`) |
+| `env_config.py` | `.env` loading (Tavily, OpenAI, CI search flag) |
 
 ---
 
-## Data model (enriched record)
+## How to run
 
-The enriched JSON objects follow **`conference_record.empty_record()`**:
+Optional env file: copy `.env.example` to `.env` in this folder.
 
-- **Identity & URLs:** `event_name`, `event_url`, `conference_domain`, group fields, `hosting_entity`, crawler URLs for exhibitors / sponsors / visitors.
-- **When & where:** `start_date`, `end_date`, `venue_name`, address fields, `city`, `country`, etc.
-- **Semantics:** `event_description_methodology`, `industry_raw`, `industry`, `industry_methodology` (`code` + `label`).
-- **Roll-ups:** `attending_companies`, `exhibitor_companies`, `exhibitor_company_websites`, `sponsor_*`, `speakers` (list of `{name, ...}`).
-- **`scope`:** boolean flags + `in_scope` + `scope_rule_version`.
-- **`listing_metadata`:** merged listing seed + parser hints (counts, JSON-LD positions, geo, hub URL, etc.).
-- **`detail_parse_notes`:** strings such as fetch errors, `speakers_tab_disabled`, etc.
+| Variable | Purpose |
+|---|---|
+| `TAVILY_API_KEY` | Tavily search for official event sites (enables CI search too) |
+| `OPENAI_API_KEY` | Optional LLM extraction on real event websites |
+| `ENABLE_CI_OFFICIAL_SEARCH` | `true` (default) — Tavily search for Conference Index events |
 
----
+```bash
+copy .env.example .env
+# edit .env — add TAVILY_API_KEY=tvly-...
+pip install -r requirements.txt
+playwright install chromium
 
-## Scope logic (summary)
+# Full UI (capture → extract → enrich)
+streamlit run inspect_app.py
 
-`evaluate_scope(record, taxonomy)`:
+# CLI enrich only (saves inspect_out/events/<slug>/ per event)
+python enrich_events.py events.json --out events_enriched.csv --limit 5
+```
 
-- **B2B** — text hits positive phrases and avoids “consumer festival” style penalties.
-- **Networking** — optional substring hits (see `taxonomy.json`).
-- **Engagement** — exhibitors (non-empty list and/or listing count estimate), sponsors (**non-empty `sponsor_companies` only**), speakers (non-empty list).
-- **`in_scope`** — configured by `in_scope_logic` (typically: must be B2B; must have at least one of exhibitor/sponsor/speaker signals).
-
-Rules are **versioned** via `scope_rule_version` in `taxonomy.json`.
+Search uses **Tavily** when `TAVILY_API_KEY` is in `.env`; otherwise DuckDuckGo (non-aggregator listings only).
 
 ---
 
 ## Extension points
 
-- **New site / different HTML:** Add or adjust selectors in **`parse_event_html.py`** (and, for list pages, **`listing_html_extract.py`**).
-- **Stricter or different targeting:** Edit **`taxonomy.json`** or load a copy with **`enrich_events.py --taxonomy`**.
-- **Blocking / CAPTCHA:** Run with **`--headed --chrome`**, adjust **`--timeout`**, or **`--proxy`**.
+**Search quality** — tune blocklist/scoring in `web_search.py`, or add a paid provider via `TAVILY_API_KEY`.
 
----
+**Field coverage** — extend `parse_event_site.py` for site-specific DOM patterns; add subpage crawls for exhibitor/sponsor lists.
 
-## How to run (short)
-
-From this directory, after `pip install -r requirements.txt` and `playwright install chromium`:
-
-```bash
-python listing_html_extract.py inspect_out/page.html --out events.json
-python enrich_events.py events.json -o events_enriched.json --satellite --speakers
-```
-
-See inline docstrings in **`inspect_page.py`** and **`enrich_events.py`** for flags (`--limit`, `--concurrency`, etc.).
+**Scope rules** — edit `taxonomy.json` to match updated data.txt methodology.

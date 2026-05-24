@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/bangalore/wipro-bengaluru-marathon-2026/200030097378427"
+  },
+  "notes": [
+    "listing_fetch: httpx"
+  ]
+}

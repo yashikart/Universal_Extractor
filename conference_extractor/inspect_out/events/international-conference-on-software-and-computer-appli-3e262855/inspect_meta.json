@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/international-conference-on-software-and-computer-applications-icsca-2027-january-putrajaya-my"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch_failed: cloudflare challenge"
+  ]
+}

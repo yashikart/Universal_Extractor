@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "program": "program.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/allied-health-conference-allicare-2026-august-sydney-au",
+    "program": "https://conferenceindex.org/event/allied-health-conference-allicare-2026-august-sydney-au/program"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch_failed: cloudflare challenge"
+  ]
+}

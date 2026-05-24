@@ -1,0 +1,22 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "program": "program.html",
+    "main": "main.html",
+    "exhibitors": "exhibitors.html",
+    "sponsors": "sponsors.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/clinical-sciences-exchange-clinscix-2026-august-sydney-au",
+    "program": "https://conferenceindex.org/event/clinical-sciences-exchange-clinscix-2026-august-sydney-au/program",
+    "main": "https://tts2026.org",
+    "exhibitors": "https://tts2026.org/industry/exhibitor-manual",
+    "sponsors": "https://tts2026.org/industry/confirmed-sponsors",
+    "speakers": "https://tts2026.org/program"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

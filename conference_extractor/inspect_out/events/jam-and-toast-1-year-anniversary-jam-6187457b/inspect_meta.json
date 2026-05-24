@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/bangalore/jam-and-toast-1-year-anniversary-jam-tickets/80003217976580",
+    "main": "https://toastandjamdjs.com"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

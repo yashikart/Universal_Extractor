@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "program": "program.html",
+    "main": "main.html",
+    "sponsors": "sponsors.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/plastic-reconstructive-and-aesthetic-surgery-conference-restore-art-2026-august-sydney-au",
+    "program": "https://conferenceindex.org/event/plastic-reconstructive-and-aesthetic-surgery-conference-restore-art-2026-august-sydney-au/program",
+    "main": "https://plasticsurgery.org.au/event/47th-annual-asaps-conference",
+    "sponsors": "https://plasticsurgery.org.au/about-asps/partners/",
+    "speakers": "https://plasticsurgery.org.au/information-for-patients/what-training-does-an-asps-member-have/"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

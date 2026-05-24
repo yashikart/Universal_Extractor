@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "main": "main.html"
+  },
+  "urls": {
+    "main": "https://bangalore.explocity.com/events-in-bangalore/giant-light-puppet-show"
+  },
+  "notes": [
+    "listing_fetch_failed: net::ERR_TOO_MANY_REDIRECTS at https://allevents.in/hyderabad/giant-light-puppet-show-tickets/80001417027892",
+    "official_fetch: httpx"
+  ]
+}

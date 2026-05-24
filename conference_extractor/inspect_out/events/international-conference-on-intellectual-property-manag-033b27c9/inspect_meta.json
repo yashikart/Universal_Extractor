@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/international-conference-on-intellectual-property-management-and-technology-transfer-icipmatt-2026-september-seoul-kr"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch_failed: cloudflare challenge"
+  ]
+}

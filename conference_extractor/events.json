@@ -1,884 +1,107 @@
 [
   {
-    "event_url": "https://10times.com/bakery-china",
+    "event_url": "https://conferenceindex.org/event/allied-health-conference-allicare-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "featured",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "3818",
-    "edition_id": "4124425",
-    "name": "Bakery China",
-    "date_display": "Wed, 20 - Sat, 23 May 2026",
-    "venue": "Shanghai , China",
-    "description": "Bakery China is a leading global trade show for the baking industry, backed by industry associations, promoting idea exchange and sector growth. The upcoming Bakery China 2026 edition will be held in Shanghai...",
-    "categories": "Tradeshow Natural & Organic Tea & Coffee Bakery & Confectionery Food & Beverages",
-    "footer_stats": "Interested 5597 4.4",
-    "start_date": "2026-05-20",
-    "end_date": "2026-05-23",
-    "jsonld_position": 1,
-    "jsonld_image": [
-      "https://c1.10times.com/images/event/3818/eventlogo-62-1697777165.jpg"
-    ]
+    "name": "Allied Health Conference"
   },
   {
-    "event_url": "https://10times.com/beauty-istanbul",
+    "event_url": "https://conferenceindex.org/event/pioneering-medical-futures-summit-innoheal-2026-august-sydney-au",
     "sources": [
-      "listing"
+      "anchor"
     ],
-    "event_id": "365509",
-    "edition_id": "4091171",
-    "name": "BEAUTYISTANBUL Exhibition",
-    "date_display": "Thu, 07 - Sat, 09 May 2026",
-    "venue": "Istanbul , Turkey",
-    "description": "Among TOP 5 Largest Cosmetics Exhibitions Worldwide",
-    "categories": "Tradeshow Fashion & Beauty Natural & Organic Wellness, Health & Fitness",
-    "footer_stats": "Interested 4512 4.5"
+    "name": "Pioneering Medical Futures Summit"
   },
   {
-    "event_url": "https://10times.com/led-expo-mumbai",
+    "event_url": "https://conferenceindex.org/event/global-medical-intelligence-conference-medintel-2026-august-sydney-au",
     "sources": [
-      "listing"
+      "anchor"
     ],
-    "event_id": "24293",
-    "edition_id": "3837916",
-    "name": "LED Expo Mumbai",
-    "date_display": "Thu, 07 - Sat, 09 May 2026",
-    "venue": "Mumbai , India",
-    "description": "The LED Expo Mumbai is a prominent tradeshow dedicated to the latest innovations and advancements in the LED industry. This significant event is organized by Messe Frankfurt Trade Fairs India Pvt. Ltd.,...",
-    "categories": "Tradeshow Electric & Electronics",
-    "footer_stats": "Interested 10.7k 4.3"
+    "name": "Global Medical Intelligence Conference"
   },
   {
-    "event_url": "https://10times.com/national-restaurant-association",
+    "event_url": "https://conferenceindex.org/event/clinical-sciences-exchange-clinscix-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "6266",
-    "edition_id": "3081300",
-    "name": "National Restaurant Association Show (NRA Show)",
-    "date_display": "Sat, 16 - Tue, 19 May 2026",
-    "venue": "Chicago , USA",
-    "description": "The National Restaurant Association Show is a premier event designed for leaders in the foodservice industry, taking place at McCormick Place in Chicago, United States. This event is set to be a pivotal...",
-    "categories": "Tradeshow Hospitality",
-    "footer_stats": "Follow 6778 4.5",
-    "start_date": "2026-05-16",
-    "end_date": "2026-05-19",
-    "jsonld_position": 2
+    "name": "Clinical Sciences Exchange"
   },
   {
-    "event_url": "https://10times.com/china-beauty-expo",
+    "event_url": "https://conferenceindex.org/event/physical-therapy-conference-movewell-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "4988",
-    "edition_id": "4082936",
-    "name": "China Beauty Expo (CBE)",
-    "date_display": "Tue, 12 - Thu, 14 May 2026",
-    "venue": "Shanghai , China",
-    "description": "China Beauty Expo is Asia's premier beauty event, providing an extensive sourcing experience for retailers, distributors, and beauty professionals, showcasing a wide range of products and manufacturing...",
-    "categories": "Tradeshow Fashion & Beauty",
-    "footer_stats": "Follow 1904 4.2",
-    "start_date": "2026-05-12",
-    "end_date": "2026-05-14",
-    "jsonld_position": 3
+    "name": "Physical Therapy Conference"
   },
   {
-    "event_url": "https://10times.com/washington-strategic-leadership-conference",
+    "event_url": "https://conferenceindex.org/event/allergy-conference-air-freedom-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "283448",
-    "edition_id": "4696968",
-    "name": "Washington International Strategic Leadership Conference",
-    "date_display": "Sun, 31 May - Tue, 02 Jun 2026",
-    "venue": "Washington DC , USA",
-    "description": "Strategic Leadership with Measurable Outcomes",
-    "categories": "Conference Business ethics Education & Training Business Services",
-    "footer_stats": "Interested 14.0k 4.6",
-    "start_date": "2026-05-31",
-    "end_date": "2026-06-02",
-    "jsonld_position": 4,
-    "jsonld_image": [
-      "https://c1.10times.com/images/event/283448/eventlogo-97-1678838708.jpg"
-    ]
+    "name": "Allergy Conference"
   },
   {
-    "event_url": "https://10times.com/beauty-spa",
+    "event_url": "https://conferenceindex.org/event/pathology-conference-lablink-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "60565",
-    "edition_id": "5084507",
-    "name": "Beauty & Spa Expo",
-    "date_display": "Mon, 18 - Tue, 19 May 2026",
-    "venue": "New Delhi , India",
-    "description": "Connecting the beauty world",
-    "categories": "Tradeshow Skincare Fashion & Beauty Cosmetics",
-    "footer_stats": "Interested 4364 4.2",
-    "start_date": "2026-05-18",
-    "end_date": "2026-05-19",
-    "jsonld_position": 5,
-    "jsonld_image": [
-      "https://login.10times.com/upload/event/60565/eventlogo-51-1576134706.jpg"
-    ]
+    "name": "Pathology Conference"
   },
   {
-    "event_url": "https://10times.com/e1zh-3rz4-x14z",
+    "event_url": "https://conferenceindex.org/event/cataract-conference-eye-summit-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "627696",
-    "edition_id": "3935178",
-    "name": "Saudi Food Expo",
-    "date_display": "Sun, 21 - Wed, 24 Jun 2026",
-    "venue": "Riyadh , Saudi Arabia",
-    "description": "Be Part of Saudi Food Expo",
-    "categories": "Tradeshow Food & Beverages",
-    "footer_stats": "Interested 8618 4.5",
-    "start_date": "2026-06-21",
-    "end_date": "2026-06-24",
-    "jsonld_position": 6,
-    "jsonld_image": [
-      "https://c1.10times.com/images/event/627696/eventlogo-77-1630063907.jpg"
-    ]
+    "name": "Cataract Conference"
   },
   {
-    "event_url": "https://10times.com/thaifex-worldfood-asia",
+    "event_url": "https://conferenceindex.org/event/critical-care-medicine-conference-life-support-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "4140",
-    "edition_id": "4197204",
-    "name": "THAIFEX - Anuga Asia",
-    "date_display": "Tue, 26 - Sat, 30 May 2026",
-    "venue": "Pak Kret , Thailand",
-    "description": "THAIFEX-Anuga Asia is a trade event for the F&B industry, offering a gateway to expand businesses in Asia. It enables interaction, idea exchange, innovation, operational optimization, and stakeholder value...",
-    "categories": "Tradeshow Food & Beverages",
-    "footer_stats": "Interested 3764 4.3",
-    "start_date": "2026-05-26",
-    "end_date": "2026-05-30",
-    "jsonld_position": 7,
-    "jsonld_image": [
-      "https://c1.10times.com/images/event/4140/eventlogo-70-1619491358.jpg"
-    ]
+    "name": "Critical Care Medicine Conference"
   },
   {
-    "event_url": "https://10times.com/palm-expo",
+    "event_url": "https://conferenceindex.org/event/plastic-reconstructive-and-aesthetic-surgery-conference-restore-art-2026-august-sydney-au",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "1579",
-    "edition_id": "4220694",
-    "name": "PALM Expo",
-    "date_display": "Thu, 28 - Sat, 30 May 2026",
-    "venue": "Mumbai , India",
-    "description": "The PALM Expo is set to take place from May 28 to May 30, 2026, at the Bombay Exhibition Centre (BEC) in Mumbai, India. This premier event serves as a significant platform for professionals in the pro-audio,...",
-    "categories": "Tradeshow Entertainment & Media Electric & Electronics",
-    "footer_stats": "Interested 5227 4.4 1 more event happening alongside",
-    "start_date": "2026-05-28",
-    "end_date": "2026-05-30",
-    "jsonld_position": 8,
-    "jsonld_image": [
-      "https://login.10times.com/upload/event/1579/eventlogo-27-1553601126.jpg"
-    ]
+    "name": "Plastic, Reconstructive and Aesthetic Surgery Conference"
   },
   {
-    "event_url": "https://10times.com/nampo-harvest-day",
+    "event_url": "https://conferenceindex.org/event/international-conference-on-intellectual-property-management-and-technology-transfer-icipmatt-2026-december-strasbourg-fr",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "46034",
-    "edition_id": "4670282",
-    "name": "NAMPO Harvest Day",
-    "date_display": "Tue, 12 - Fri, 15 May 2026",
-    "venue": "Bothaville , South Africa",
-    "description": "The largest show of agricultural machinery and livestock",
-    "categories": "Tradeshow Agriculture & Forestry",
-    "footer_stats": "Interested 2226 4.4",
-    "start_date": "2026-05-12",
-    "end_date": "2026-05-15",
-    "jsonld_position": 9
+    "name": "International Conference on Intellectual Property Management and Technology Transfer"
   },
   {
-    "event_url": "https://10times.com/sial-china",
+    "event_url": "https://conferenceindex.org/event/international-conference-on-intellectual-property-management-and-technology-transfer-icipmatt-2026-november-toronto-ca",
     "sources": [
-      "listing",
-      "jsonld"
+      "anchor"
     ],
-    "event_id": "4982",
-    "edition_id": "4111191",
-    "name": "SIAL Shanghai",
-    "date_display": "Mon, 18 - Wed, 20 May 2026",
-    "venue": "Shanghai , China",
-    "description": "SIAL Shanghai, held at the Shanghai New International Expo Centre (SNIEC), is recognized as Asia's largest food and beverage trade fair, organized by Comexposium-Sial Exhibition Co. Ltd. This premier event...",
-    "categories": "Tradeshow Hotel, Restaurant Wine & Spirits Food & Beverages",
-    "footer_stats": "Interested 5573 4.3",
-    "start_date": "2026-05-18",
-    "end_date": "2026-05-20",
-    "jsonld_position": 10,
-    "jsonld_image": [
-      "https://c1.10times.com/images/event/4982/eventlogo-39-1709095124.jpg"
-    ]
+    "name": "International Conference on Intellectual Property Management and Technology Transfer"
   },
   {
-    "event_url": "https://10times.com/electric-expo-ahmedabad",
+    "event_url": "https://conferenceindex.org/event/international-conference-on-intellectual-property-management-and-technology-transfer-icipmatt-2026-september-seoul-kr",
     "sources": [
-      "listing"
+      "anchor"
     ],
-    "event_id": "425772",
-    "edition_id": "4573462",
-    "name": "Electric Expo",
-    "date_display": "Fri, 29 - Sun, 31 May 2026",
-    "venue": "Ahmedabad , India",
-    "description": "Gain Opportunity to meet thousands of buyers across the growing markets Western India.",
-    "categories": "Tradeshow Electric & Electronics",
-    "footer_stats": "Interested 1641 4.4"
+    "name": "International Conference on Intellectual Property Management and Technology Transfer"
   },
   {
-    "event_url": "https://10times.com/seoul-cosmetic-beauty-expo",
+    "event_url": "https://conferenceindex.org/event/international-conference-on-educational-and-information-technology-iceit-2027-march-chongqing-cn",
     "sources": [
-      "listing"
+      "anchor"
     ],
-    "event_id": "27142",
-    "edition_id": "4256861",
-    "name": "Cosmobeauty Seoul",
-    "date_display": "Wed, 27 - Fri, 29 May 2026",
-    "venue": "Seoul , South Korea",
-    "description": "Cosmobeauty Seoul is a premier exhibition focused on the beauty and fashion industries, held at the COEX convention center in Seoul, South Korea. Organized by the Korea International Exhibition Co. Ltd....",
-    "categories": "Tradeshow Fashion & Beauty",
-    "footer_stats": "Interested 2552 4.4 1 more event happening alongside"
+    "name": "International Conference on Educational and Information Technology"
   },
   {
-    "event_url": "https://10times.com/gem-geneve",
+    "event_url": "https://conferenceindex.org/event/international-conference-on-software-and-computer-applications-icsca-2027-january-putrajaya-my",
     "sources": [
-      "listing"
+      "anchor"
     ],
-    "event_id": "374728",
-    "edition_id": "4284437",
-    "name": "Geneva International Gem and Jewellery Show",
-    "date_display": "Thu, 07 - Sun, 10 May 2026",
-    "venue": "Geneva , Switzerland",
-    "description": "The Geneva International Gem and Jewellery Show, taking place from May 07 to May 10, 2026, at the renowned Palexpo in Geneva, Switzerland, promises to be a dazzling celebration of the world's finest gems...",
-    "categories": "Tradeshow Gems & Jewelry Fashion & Beauty",
-    "footer_stats": "Interested 654 3.7"
-  },
-  {
-    "event_url": "https://10times.com/we-are-africa",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "165442",
-    "edition_id": "4067927",
-    "name": "We Are Africa",
-    "date_display": "Mon, 04 - Sat, 09 May 2026",
-    "venue": "Cape Town , South Africa",
-    "description": "We Are Africa is recognized as the world's most vibrant gathering of high-end African travel brands, top international press, and esteemed buyers. The event is held at the Cape Town Stadium in Cape Town,...",
-    "categories": "Tradeshow Travel & Tourism",
-    "footer_stats": "Follow 241 3.4"
-  },
-  {
-    "event_url": "https://10times.com/jck-las-vegas",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "3599",
-    "edition_id": "4272761",
-    "name": "JCK Las Vegas",
-    "date_display": "Fri, 29 May - Mon, 01 Jun 2026",
-    "venue": "Las Vegas , USA",
-    "description": "JCK Las Vegas is the jewelry trade's most important global gathering, providing a vibrant platform for the international jewelry community to engage in business growth through buying, selling, networking,...",
-    "categories": "Tradeshow Fashion & Beauty",
-    "footer_stats": "Interested 2864 4.3"
-  },
-  {
-    "event_url": "https://10times.com/apa-annual-meeting",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "69294",
-    "edition_id": "1870308",
-    "name": "American Psychiatric Association Annual Meeting",
-    "date_display": "Sat, 16 - Wed, 20 May 2026",
-    "venue": "San Francisco , USA",
-    "description": "The American Psychiatric Association Annual Meeting strives to advance mental health as an integral part of overall well-being. It seeks to ensure equal access to quality care for those affected by mental...",
-    "categories": "Conference Wellness, Health & Fitness Medical & Pharma",
-    "footer_stats": "Interested 171 4.0"
-  },
-  {
-    "event_url": "https://10times.com/esthetics-spa-dallas",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "18579",
-    "edition_id": "4099108",
-    "name": "The International Congress of Esthetics & Spa Dallas (ICES Dallas)",
-    "date_display": "Sun, 17 - Mon, 18 May 2026",
-    "venue": "Dallas , USA",
-    "description": "The International Congress of Esthetics and Spa provides business growth opportunities through innovative education, hands-on product training, expert-guided conferences, and an empowering exhibitor...",
-    "categories": "Tradeshow Fashion & Beauty Education",
-    "footer_stats": "Interested 2105 4.5"
-  },
-  {
-    "event_url": "https://10times.com/e1r4-f7g0-dhf3",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "703120",
-    "edition_id": "4206347",
-    "name": "Annual ICNA-MAS Convention",
-    "date_display": "Sat, 23 - Mon, 25 May 2026",
-    "venue": "Baltimore , USA",
-    "categories": "Conference Education & Training",
-    "footer_stats": "Interested 368 4.4"
-  },
-  {
-    "event_url": "https://10times.com/international-franchise-expo",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "27349",
-    "edition_id": "4220736",
-    "name": "International Franchise Expo (IFE)",
-    "date_display": "Fri, 29 - Sat, 30 May 2026",
-    "venue": "New York , USA",
-    "description": "The International Franchise Expo (IFE) is set to be the premier franchise show in the United States, taking place at the Jacob K. Javits Convention Center in New York. This event is renowned for its significant...",
-    "categories": "Tradeshow Business Services",
-    "footer_stats": "Interested 1784 4.0"
-  },
-  {
-    "event_url": "https://10times.com/premiere-orlando",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "27444",
-    "edition_id": "4665657",
-    "name": "Premiere Orlando",
-    "date_display": "Sat, 30 May - Mon, 01 Jun 2026",
-    "venue": "Orlando , USA",
-    "description": "Premiere Orlando is set to take place at the renowned Orange County Convention Center from May 30 to June 1, 2026. This prestigious event serves as a vibrant hub for beauty professionals, showcasing the...",
-    "categories": "Tradeshow Cosmetics Fashion & Beauty Skincare",
-    "footer_stats": "Interested 3829 4.1"
-  },
-  {
-    "event_url": "https://10times.com/franchise-india-delhi",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "6807",
-    "edition_id": "5591434",
-    "name": "Franchise India Delhi (Delhi Show)",
-    "date_display": "Sat, 16 - Sun, 17 May 2026",
-    "venue": "New Delhi , India",
-    "description": "World's Largest International Franchise & Retail Show",
-    "categories": "Tradeshow Business Services Real Estate & Property Franchising & Retailing Entertainment & Media Paid entry",
-    "footer_stats": "Interested 4036 4.0"
-  },
-  {
-    "event_url": "https://10times.com/intec",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "1397",
-    "edition_id": "5274557",
-    "name": "International Machine Tools & Industrial Trade Fairs (Intec)",
-    "date_display": "Thu, 04 - Mon, 08 Jun 2026",
-    "venue": "Coimbatore , India",
-    "description": "The International Machine Tools & Industrial Trade Fairs is set to return for its 21st edition, taking place at the CODISSIA Trade Fair Complex in Coimbatore, India. This prominent event is known for attracting...",
-    "categories": "Tradeshow Industrial Engineering",
-    "footer_stats": "Interested 7841 4.1"
-  },
-  {
-    "event_url": "https://10times.com/intersolar-expo",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "8412",
-    "edition_id": "4013525",
-    "name": "Intersolar Europe (IS Europe)",
-    "date_display": "Tue, 23 - Thu, 25 Jun 2026",
-    "venue": "Munich , Germany",
-    "description": "Intersolar Europe is a premier tradeshow dedicated to the solar energy sector, taking place at the Exhibition Munich in Germany. Organized by Solar Promotion GmbH, this significant event is designed to...",
-    "categories": "Tradeshow Power & Energy",
-    "footer_stats": "Interested 2312 4.5 3 more events happening alongside"
-  },
-  {
-    "event_url": "https://10times.com/e11r-g1pz-1dp1",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "734614",
-    "edition_id": "5545230",
-    "name": "Home Decor Show",
-    "date_display": "Fri, 12 - Mon, 15 Jun 2026",
-    "venue": "Mumbai , India",
-    "description": "The Home Decor Show, held at MMRDA Grounds in Mumbai, India, is a premier trade exhibition dedicated to home decor and furnishings. This event serves as a significant platform for exhibitors, providing...",
-    "categories": "Tradeshow Building & Construction Home & Office",
-    "footer_stats": "Interested 2236 4.3"
-  },
-  {
-    "event_url": "https://10times.com/arecc",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "340558",
-    "edition_id": "4314818",
-    "name": "AREC Conference",
-    "date_display": "Sun, 24 - Mon, 25 May 2026",
-    "venue": "Gold Coast , Australia",
-    "description": "The AREC Conference, set against the stunning backdrop of the Gold Coast Convention and Exhibition Centre, promises to be an unmissable event for industry professionals. Scheduled for May 24-25, 2026,...",
-    "categories": "Conference Building & Construction Real Estate & Property Paid entry",
-    "footer_stats": "Interested 172 3.5"
-  },
-  {
-    "event_url": "https://10times.com/mafbex",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "9475",
-    "edition_id": "4385104",
-    "name": "Manila Food & Beverage Expo (MAFBEX)",
-    "date_display": "Wed, 10 - Sun, 14 Jun 2026",
-    "venue": "Pasay , Philippines",
-    "description": "Displaying Variety of Food Supplies and Services",
-    "categories": "Tradeshow Food & Beverages",
-    "footer_stats": "Interested 5168 4.0"
-  },
-  {
-    "event_url": "https://10times.com/ethiopia-food-beverage",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "6554",
-    "edition_id": "4196583",
-    "name": "Ethiopia Food Expo",
-    "date_display": "Thu, 25 - Sat, 27 Jun 2026",
-    "venue": "Addis Ababa , Ethiopia",
-    "description": "Ethiopia food show 2026 returns to Addis Ababa, showcasing the impressive growth and vast potential of Ethiopia's food & beverage trade. Organised by fairtrade Messe in cooperation with local partners...",
-    "categories": "Tradeshow Food & Beverages",
-    "footer_stats": "Interested 829 3.4"
-  },
-  {
-    "event_url": "https://10times.com/atd-international-conference-exposition-los-angele",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "458068",
-    "edition_id": "1885928",
-    "name": "ATD International Conference & Exposition",
-    "date_display": "Sun, 17 - Wed, 20 May 2026",
-    "venue": "Los Angeles , USA",
-    "description": "We serve professionals who aid others in reaching their full potential through enhancing their knowledge, abilities, and skills in the workplace. They hold various titles, including trainers, talent development...",
-    "categories": "Tradeshow Education & Training",
-    "footer_stats": "Interested 35"
-  },
-  {
-    "event_url": "https://10times.com/international-textile-fair",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "157344",
-    "edition_id": "4502435",
-    "name": "International Apparel & Textile Fair (IATF)",
-    "date_display": "Tue, 23 - Thu, 25 Jun 2026",
-    "venue": "Dubai , UAE",
-    "description": "Gulf's Biggest International B2B Fashion Trade Sourcing Fair",
-    "categories": "Tradeshow Textile, Fabrics & Yarns Apparel & Clothing",
-    "footer_stats": "Interested 11.0k 3.8"
-  },
-  {
-    "event_url": "https://10times.com/champs-tradeshow-lasvegas",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "42744",
-    "edition_id": "5071807",
-    "name": "CHAMPS Las Vegas",
-    "date_display": "Wed, 06 - Sat, 09 May 2026",
-    "venue": "Las Vegas , USA",
-    "description": "The Premiere Counter Culture Business Event",
-    "categories": "Tradeshow Entertainment & Media Business Services",
-    "footer_stats": "Interested 2807 4.4"
-  },
-  {
-    "event_url": "https://10times.com/e1k2-f8r5-f8dz",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "807016",
-    "edition_id": "5073971",
-    "name": "Silver Show of India (SSI)",
-    "date_display": "Fri, 05 - Mon, 08 Jun 2026",
-    "venue": "Mumbai , India",
-    "description": "Hum Sabka Apna Silver Show",
-    "categories": "Tradeshow Fashion & Beauty",
-    "footer_stats": "Interested 1348 4.5"
-  },
-  {
-    "event_url": "https://10times.com/ihff-new-delhi",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "368612",
-    "edition_id": "4819432",
-    "name": "International Health, Sports, Fitness & Wellness Trade Show (IHFF)",
-    "date_display": "Fri, 12 - Sun, 14 Jun 2026",
-    "venue": "New Delhi , India",
-    "description": "Asia's Largest Sport's & Fitness Expo",
-    "categories": "Tradeshow Wellness, Health & Fitness",
-    "footer_stats": "Interested 2336 4.5"
-  },
-  {
-    "event_url": "https://10times.com/communic-asia",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "1847",
-    "edition_id": "4180508",
-    "name": "CommunicAsia",
-    "date_display": "Wed, 20 - Fri, 22 May 2026",
-    "venue": "Singapore",
-    "description": "CommunicAsia is a significant event for telecom professionals in Asia, featuring communication service providers, technology vendors, regulators, and enterprises. It will cover topics like 5G monetization...",
-    "categories": "Tradeshow IT & Technology Telecommunication",
-    "footer_stats": "Follow 1307 4.4 3 more events happening alongside"
-  },
-  {
-    "event_url": "https://10times.com/big-riyadh",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "229513",
-    "edition_id": "4929268",
-    "name": "Big 5 Construct Saudi",
-    "date_display": "Mon, 11 - Thu, 14 May 2026",
-    "venue": "Riyadh , Saudi Arabia",
-    "description": "Big 5 Construct Saudi is an essential event returning to the Riyadh Front Exhibition & Conference Center, focusing on the diverse sectors that drive and sustain construction activity in Saudi Arabia. This...",
-    "categories": "Tradeshow Building & Construction",
-    "footer_stats": "Interested 824 4.2 1 more event happening alongside"
-  },
-  {
-    "event_url": "https://10times.com/cphi-china",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "4628",
-    "edition_id": "4474768",
-    "name": "CPhI China",
-    "date_display": "Tue, 16 - Thu, 18 Jun 2026",
-    "venue": "Shanghai , China",
-    "description": "CPhI China is Asia's top pharmaceutical event, uniting suppliers and buyers from the supply chain. Global experts convene in Shanghai to network, find cost-effective solutions, and engage in essential...",
-    "categories": "Tradeshow Medical & Pharma",
-    "footer_stats": "Follow 1779 4.4 3 more events happening alongside"
-  },
-  {
-    "event_url": "https://10times.com/cphi-philadelphia",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "294222",
-    "edition_id": "4124375",
-    "name": "CPHI Americas",
-    "date_display": "Tue, 02 - Thu, 04 Jun 2026",
-    "venue": "Philadelphia , USA",
-    "description": "The CPHI North America event unites the complete pharmaceutical supply chain in the US, attracting international attendees for three days of engaging program content and networking opportunities.",
-    "categories": "Tradeshow Medical & Pharma",
-    "footer_stats": "Follow 439 4.8"
-  },
-  {
-    "event_url": "https://10times.com/solar-and-windtech-asia",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "357694",
-    "edition_id": "4940592",
-    "name": "Solar & WindTech Asia",
-    "date_display": "Tue, 12 - Thu, 14 May 2026",
-    "venue": "Karachi , Pakistan",
-    "description": "The Solar & WindTech Asia is set to take place at the Karachi Expo Center from May 12 to May 14, 2026. This premier event serves as a significant platform for industry professionals, innovators, and stakeholders...",
-    "categories": "Tradeshow Power & Energy",
-    "footer_stats": "Interested 437 4.0"
-  },
-  {
-    "event_url": "https://10times.com/toy-biz-international",
-    "sources": [
-      "listing"
-    ],
-    "event_id": "50668",
-    "edition_id": "4994462",
-    "name": "Toy Biz International",
-    "date_display": "Sat, 04 - Tue, 07 Jul 2026",
-    "venue": "New Delhi , India",
-    "description": "International trade exhibition for toys industry.",
-    "categories": "Tradeshow Toys & Games Baby, Kids & Maternity",
-    "footer_stats": "Interested 2572 4.3"
-  },
-  {
-    "event_url": "https://10times.com/jewellery-exhibition-kobe",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2536",
-    "edition_id": "4090828",
-    "name": "Kobe International Jewelery Exhibition"
-  },
-  {
-    "event_url": "https://10times.com/e11h-rf8p-hz0s-3-nigeria-industries-manufacturing-summit",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2704265",
-    "edition_id": "4882455",
-    "name": "Nigeria Industries & Manufacturing Summit"
-  },
-  {
-    "event_url": "https://10times.com/fire-safety-daegu",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "274925",
-    "edition_id": "4274331",
-    "name": "Fire & Safety Expo Korea"
-  },
-  {
-    "event_url": "https://10times.com/small-business-expo-chicago",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "148498",
-    "edition_id": "4374447",
-    "name": "Chicago Small Business Expo"
-  },
-  {
-    "event_url": "https://10times.com/aluminium-china",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "3608",
-    "edition_id": "4442465",
-    "name": "Aluminium China"
-  },
-  {
-    "event_url": "https://10times.com/copperchina",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "1057554",
-    "edition_id": "4459496",
-    "name": "Copper China"
-  },
-  {
-    "event_url": "https://10times.com/cbd",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2057",
-    "edition_id": "4455449",
-    "name": "China International Building Decoration Fair"
-  },
-  {
-    "event_url": "https://10times.com/paace-automechanika-mexico",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "1573",
-    "edition_id": "4463339",
-    "name": "INA PAACE Automechanika Mexico"
-  },
-  {
-    "event_url": "https://10times.com/e1k1-p2dr-4s1z",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "841756",
-    "edition_id": "4517465",
-    "name": "Texworld Los Angeles & Apparel Sourcing Los Angeles"
-  },
-  {
-    "event_url": "https://10times.com/e12h-kgh6-sff0-5-home-textile-sourcing-los-angeles",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2832500",
-    "edition_id": "5130607",
-    "name": "Home Textile Sourcing Los Angeles"
-  },
-  {
-    "event_url": "https://10times.com/texworld-usa",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "6646",
-    "edition_id": "4667744",
-    "name": "Texworld New York City & Apparel Sourcing New York City"
-  },
-  {
-    "event_url": "https://10times.com/home-textiles-market-ney-york",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "8379",
-    "edition_id": "4879403",
-    "name": "Home Textiles Sourcing New York City"
-  },
-  {
-    "event_url": "https://10times.com/e15x-fpr0-f4s3",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "904705",
-    "edition_id": "4926884",
-    "name": "WPE & WHPE"
-  },
-  {
-    "event_url": "https://10times.com/texworld-france",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "918",
-    "edition_id": "5315038",
-    "name": "Texworld Apparel Sourcing Paris"
-  },
-  {
-    "event_url": "https://10times.com/fishex",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "169666",
-    "edition_id": "5118599",
-    "name": "China International (Guangzhou) Fisheries & Seafood Expo"
-  },
-  {
-    "event_url": "https://10times.com/pet-istanbul",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "296328",
-    "edition_id": "4849558",
-    "name": "PETZOO Eurasia"
-  },
-  {
-    "event_url": "https://10times.com/e1h2-k2d0-hh1s-h-beyond-blueprint",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2812252",
-    "edition_id": "5096891",
-    "name": "Beyond the Blueprint"
-  },
-  {
-    "event_url": "https://10times.com/e1r3-4z00-xxdg",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "769913",
-    "edition_id": "5580263",
-    "name": "Neo4j Nodes | Engineering Better Intelligence"
-  },
-  {
-    "event_url": "https://10times.com/sdpe",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "348627",
-    "edition_id": "5196420",
-    "name": "Guangzhou International Screen Printing & Industrial Ink-Jet Printing & Digital Intelligent Printing Expo"
-  },
-  {
-    "event_url": "https://10times.com/e1d2-10d2-xzzg-x",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "1196639",
-    "edition_id": "4253685",
-    "name": "Intersec Shanghai"
-  },
-  {
-    "event_url": "https://10times.com/e1hr-h402-sdx4-p-kb4-con",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2725194",
-    "edition_id": "4923039",
-    "name": "KB4-CON"
-  },
-  {
-    "event_url": "https://10times.com/e1s4-k1k1-f2gp",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "588034",
-    "edition_id": "3943627",
-    "name": "PFAS Forum"
-  },
-  {
-    "event_url": "https://10times.com/e15r-f3dh-3fs2",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "701205",
-    "edition_id": "4153715",
-    "name": "Home Textiles Exhibition"
-  },
-  {
-    "event_url": "https://10times.com/e1hs-0rf0-f2x0-d",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2570091",
-    "edition_id": "5456538",
-    "name": "Kenya Business and Investment Summit"
-  },
-  {
-    "event_url": "https://10times.com/louisiana-energy-conference",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "67149",
-    "edition_id": "4717427",
-    "name": "Louisiana Energy Conference"
-  },
-  {
-    "event_url": "https://10times.com/r-t-asia",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "3107",
-    "edition_id": "4265057",
-    "name": "R+T Asia"
-  },
-  {
-    "event_url": "https://10times.com/newyork-shoe-expo",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2401",
-    "edition_id": "5047900",
-    "name": "Footwear Show New York Expo"
-  },
-  {
-    "event_url": "https://10times.com/e1hk-1gh4-hf18-h-india-international-cargo-show",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "2832202",
-    "edition_id": "5129931",
-    "name": "India International Cargo Show"
-  },
-  {
-    "event_url": "https://10times.com/e1d5-d3p3-7xsf-g",
-    "sources": [
-      "featured"
-    ],
-    "event_id": "1149503",
-    "edition_id": "4767159",
-    "name": "WATERTECH CHINA"
+    "name": "International Conference on Software and Computer Applications"
   }
 ]

@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "program": "program.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://conferenceindex.org/event/cataract-conference-eye-summit-2026-august-sydney-au",
+    "program": "https://conferenceindex.org/event/cataract-conference-eye-summit-2026-august-sydney-au/program",
+    "main": "https://www.scholarmeet.com/icc-2026-20-international-conference-on-cataract-sydney-2026"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

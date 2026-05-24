@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/new-delhi/urban-birding-at-sunder-nursery-tickets/80007846110167",
+    "main": "https://www.sundernursery.org/bird-walk-nov2025.php",
+    "speakers": "https://www.sundernursery.org/environment-programmes.php"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

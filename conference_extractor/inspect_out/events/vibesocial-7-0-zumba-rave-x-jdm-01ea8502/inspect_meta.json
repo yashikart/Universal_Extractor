@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/ahmedabad/vibesocial-70-zumba-rave-x-jdm-tickets/80002668975178",
+    "main": "https://www.runrgo.com/events/ahmedabad/vibesocial-70-zumba-rave-x-jdm"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/kolkata/yogathon-2026-powered-by-samartha-consious-living-tickets/80004581525146"
+  },
+  "notes": [
+    "listing_fetch: httpx"
+  ]
+}

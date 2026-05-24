@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/ahmedabad/bhajan-jamming-x-garba-workshop-tickets/80002854104188",
+    "main": "https://www.gujpreneur.com/events/bhajan-jamming-x-garba-workshop"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

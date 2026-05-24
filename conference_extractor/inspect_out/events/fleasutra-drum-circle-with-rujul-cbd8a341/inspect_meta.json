@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/vadodara/fleasutra-drum-circle-with-rujul-tickets/80003226884631"
+  },
+  "notes": [
+    "listing_fetch: httpx"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "listing": "listing.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/allahabad/shamsh-trader-conclave-tickets/80001435243842"
+  },
+  "notes": [
+    "listing_fetch: httpx"
+  ]
+}

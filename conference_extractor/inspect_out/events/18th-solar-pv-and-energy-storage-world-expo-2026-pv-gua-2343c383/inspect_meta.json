@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "exhibitors": "exhibitors.html",
+    "sponsors": "sponsors.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/guangzhou/18th-solar-pv-and-energy-storage-world-expo-2026-pv-guangzhou-tickets/100001633768729249",
+    "main": "https://en.pvguangzhou.com",
+    "exhibitors": "https://en.smartcity.org.tw/index.php/en-us/get-involved/for-exhibitors",
+    "sponsors": "https://en.pvguangzhou.com/article/show_article.php?id=2887",
+    "speakers": "https://en.pvguangzhou.com/article/show_article.php?id=2889"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

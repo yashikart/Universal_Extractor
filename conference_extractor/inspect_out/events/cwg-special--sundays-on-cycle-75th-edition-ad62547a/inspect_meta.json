@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/ahmedabad/cwg-special-sundays-on-cycle-75th-edition-tickets/80008077104098",
+    "main": "https://thenewsmill.com/2026/05/fit-india-sundays-on-cycle-to-mark-75th-edition-with-commonwealth-games-day-events"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: playwright"
+  ]
+}

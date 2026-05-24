@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "sponsors": "sponsors.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/vienna/dif26-donauinselfest-2026-tickets/80002066096579",
+    "main": "https://donauinselfest.at",
+    "sponsors": "https://www.lotterien.at/unternehmen/sponsoring/unsere-sponsoring-projekte"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

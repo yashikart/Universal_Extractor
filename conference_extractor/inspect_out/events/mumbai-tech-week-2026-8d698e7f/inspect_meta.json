@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "listing": "listing.html",
+    "main": "main.html",
+    "sponsors": "sponsors.html",
+    "speakers": "speakers.html"
+  },
+  "urls": {
+    "listing": "https://allevents.in/mumbai/mumbai-tech-week-2026/80003225697107",
+    "main": "https://mumbaitechweek.com",
+    "sponsors": "https://mumbaitechweek.com/partners/",
+    "speakers": "https://mumbaitechweek.com/programming/"
+  },
+  "notes": [
+    "listing_fetch: httpx",
+    "official_fetch: httpx"
+  ]
+}

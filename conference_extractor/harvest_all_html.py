@@ -48,6 +48,15 @@ def _is_cf_hard_ip_block(html: str) -> bool:
 
 
 async def _apply_playwright_stealth(page) -> None:
+    """Apply stealth patches; supports both playwright-stealth API variants."""
+    import playwright_stealth as ps
+
+    if hasattr(ps, "stealth_async"):
+        from playwright_stealth import StealthConfig, stealth_async
+
+        await stealth_async(page, StealthConfig(nav_user_agent=DEFAULT_UA))
+        return
+
     from playwright_stealth import Stealth
 
     stealth = Stealth(navigator_user_agent_override=DEFAULT_UA)
